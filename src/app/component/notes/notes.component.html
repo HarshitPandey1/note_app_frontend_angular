@@ -1,0 +1,22 @@
+<!-- Notes List -->
+<div class="notes-container">
+    <app-note-card 
+  *ngFor="let note of notes"
+  [note]="note"
+  (onEdit)="onEdit($event)" 
+  (onDelete)="onNoteDelete($event)">
+</app-note-card>
+
+
+  </div>
+  <!-- notes.component.html -->
+<div *ngIf="editMode" class="edit-popup">
+    <form [formGroup]="editForm" (ngSubmit)="updateNote()">
+      <input formControlName="title" />
+      <input formControlName="description" />
+      <textarea formControlName="body"></textarea>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  
+ 

@@ -1,0 +1,64 @@
+.notes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding: 20px;
+  }
+  /* Add this to notes.component.css */
+
+.edit-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center it */
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .edit-popup form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .edit-popup input,
+  .edit-popup textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    resize: vertical;
+  }
+  
+  .edit-popup button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .edit-popup button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Optional: add a semi-transparent backdrop */
+  .edit-popup::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+  }
+  

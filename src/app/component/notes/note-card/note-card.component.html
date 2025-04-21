@@ -1,0 +1,24 @@
+<div class="note-card" (click)="openPopup()">
+    <h3>{{ note.title }}</h3>
+    <p class="description">{{ note.description }}</p>
+    <div class="body">{{ note.body | slice: 0:60 }}...</div>
+  
+    <!-- Edit/Delete Buttons -->
+    <div class="card-actions">
+        <button (click)="editNote(); $event.stopPropagation()">Edit</button>
+
+        <button (click)="deleteNote(); $event.stopPropagation()">Delete</button>
+        
+    </div>
+  </div>
+  
+  <!-- Popup Modal -->
+  <div class="popup-backdrop" *ngIf="showPopup" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+      <h2>{{ note.title }}</h2>
+      <p><strong>{{ note.description }}</strong></p>
+      <pre>{{ note.body }}</pre>
+      <button (click)="closePopup()">Close</button>
+    </div>
+  </div>
+  

@@ -1,0 +1,16 @@
+<div class="note-container">
+    <h1>Note App</h1>
+    <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+      <label for="title">Heading</label>
+      <input id="title" formControlName="title" type="text" placeholder="Enter note heading" required />
+  
+      <label for="description">Description</label>
+      <input id="description" formControlName="description" type="text" placeholder="Enter description" required />
+  
+      <label for="body">Main Body</label>
+      <textarea id="body" formControlName="body" rows="5" placeholder="Write your note here..." required></textarea>
+  
+      <button type="submit" [disabled]="noteForm.invalid">Submit</button>
+    </form>
+  </div>
+  
